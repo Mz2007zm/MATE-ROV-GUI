@@ -36,12 +36,15 @@ hours.set('00')
 sec.set('00')
 mins.set('00')
 hrs.set('00')
+times = 0
+
 # #  # #
 
 def countdown():
+    global times
     print("hello") #testing, working but code not working
     times = int(hrs.get())*3600+ int(mins.get())*60 + int(sec.get())
-    while times > -1:
+    while times > 0:
         minute,second = (times // 60 , times % 60)
 
         hour = 0
@@ -54,25 +57,29 @@ def countdown():
 
         root.update()
         time.sleep(1)
+        times -= 1
         if(times == 0):
             sec.set('00')
             mins.set('00')
             hrs.set('00')
-        times -= 1
+            return
+
 
 tk.Button(root, text='START', bd ='5', command = countdown, bg = 'white', font = 'arial 10 bold').place(x=150, y=210)
 # #  # #
 
 def stop():
+    global times
     minute.set('00')
     second.set('00')
     hours.set('00')
     sec.set('00')
     mins.set('00')
     hrs.set('00')
-    root.destroy()
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
+    times = 0
+    #root.destroy()
+    #python = sys.executable
+    #os.execl(python, python, * sys.argv)
 
 
 
