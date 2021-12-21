@@ -3,14 +3,15 @@ import tkinter as tk
 import time
 import sys
 import os
+import tkinter.font as font
 from tkinter import messagebox, RIGHT, LEFT, StringVar
+
 ########################
 root = tk.Tk()
-root.geometry('400x300')
+root.geometry("1920x1080")
 root.resizable(0,0)
 root.config(bg ='gray')
 root.title("Countdown Timer Verision 0.0.1")
-
 # #  # #
 
 minute=StringVar()
@@ -85,24 +86,49 @@ def stop():
 
 tk.Button(root, text='STOP', bd ='5', command = stop, bg = 'white', font = 'arial 10 bold').place(x=150, y=250)
 ##############################################################
-top = tk.Tk()
-top.geometry("1920x1080")
 
 def button1():
    tk.messagebox.showinfo( "Hello Python", "Hello World")
 
-B = tk.Button(top, text ="Hello", command = button1)
-
-B.pack(side=RIGHT, padx=25, pady=25)
-
-# # # # # # # # # # # # # # # # # # # # #
+B = tk.Button(root, text ="Hello", command = button1, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 20).place(x=1050, y=100)
 
 def button2():
    tk.messagebox.showinfo( "Hello Python2", "Hello World2")
 
-Bu = tk.Button(top, text ="Hello2", command = button2)
+Bu = tk.Button(root, text ="Hello2", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 20).place(x=1050, y=150)
 
-Bu.pack(side=RIGHT, padx=15, pady=20)
+def button3():
+   tk.messagebox.showinfo( "Hello Python3", "Hello World3")
+
+Bu = tk.Button(root, text ="Hello3", command = button3, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 20).place(x=1050, y=200)
+
+def button4():
+   tk.messagebox.showinfo( "Hello Python4", "Hello World4")
+
+Bu = tk.Button(root, text ="Hello4", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 20).place(x=1050, y=250)
+
+def button5():
+   tk.messagebox.showinfo( "Hello Python5", "Hello World5")
+
+Bu = tk.Button(root, text ="Hello5", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 20).place(x=1050, y=300)
+
+def button6():
+   tk.messagebox.showinfo( "Hello Python6", "Hello World6")
+
+Bu = tk.Button(root, text ="Hello6", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 10).place(x=1050, y=350)
+
+def button6():
+   tk.messagebox.showinfo( "Hello Python6", "Hello World6")
+
+Bu = tk.Button(root, text ="Hello6", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
+          width = 10).place(x=1150, y=350)
+
 ##############
-top.mainloop()
+root.mainloop()
 ##############
