@@ -4,10 +4,26 @@ import tkinter as tk
 import time
 import sys
 import os
-import pygame
 import tkinter.font as font
 import cv2
 from tkinter import messagebox, RIGHT, LEFT, StringVar
+
+
+
+self.text = tk.StringVar()
+self.text.set("Test")
+self.label = tk.Label(self.root, textvariable=self.text)
+
+self.button = tk.Button(self.root, text="Click to change text below",command=self.changeText)
+self.button.pack()
+self.label.pack()
+self.root.mainloop()
+
+    def changeText(self):
+        self.text.set("Text updated")
+
+
+
 
 ########################
 videoCaptureObject = cv2.VideoCapture(0)
@@ -133,15 +149,12 @@ Bu = tk.Button(root, text ="Hello5", command = button2, font = 'Roboto', borderw
 def button6():
    tk.messagebox.showinfo( "Hello Python6", "Hello World6")
 
-Bu = tk.Button(root, text ="Hello6", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
-          width = 10).place(x=1050, y=350)
+Bu = tk.Button(root, text ="Hello6", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,width = 10).place(x=1050, y=350)
 
-def button6():
-   tk.messagebox.showinfo( "Hello Python6", "Hello World6")
+def task1():
+    print("hi")
 
-Bu = tk.Button(root, text ="Hello6", command = button2, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,
-          width = 10).place(x=1150, y=350)
-
+Bu = tk.Button(root, text ="Hello6", command = task1, font = 'Roboto', borderwidth = 0, bg = 'dark gray', height = 1,width = 10).place(x=1150, y=350)
 ##############
 while True:
     root.update()
